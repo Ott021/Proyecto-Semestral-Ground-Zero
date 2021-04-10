@@ -5,8 +5,3 @@ Integrantes: JOSE GABRIEL ESCALONA HILARRAZA
              OTTO ANDRES PACHECO VIDAL
              
 ## Lider de Equipo: OTTO ANDRES PACHECO VIDAL
-
-# Esta es la rama otto
-## otro cambio en otto
-
-## cambio
