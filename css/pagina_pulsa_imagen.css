@@ -1,0 +1,37 @@
+
+
+#imagen{
+    border:2px #b7b7a4 solid;
+    margin-top: 50px;
+}
+
+#primer{
+    height: 45vh;
+    margin-bottom: 50px;
+}
+
+#segundo{
+    margin-top: 70px;
+}
+
+#boton{
+    width: 40vw;
+    height: 7vh;
+}
+
+#Descripciones{
+    margin-left: 10px;
+    border:2px #b7b7a4 solid;
+}
+
+h5{
+    margin-left: 25px;
+}
+
+#margencards{
+    margin-left: 80px;
+}
+
+h2{
+    margin-left: 130px;
+}
