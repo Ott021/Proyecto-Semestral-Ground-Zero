@@ -26,13 +26,6 @@ h2{
     margin-left: 130px;
 }
 
-#cologo{
-    margin-left: 25px;
-    width: 200px;
-    height: 200px;
-}
-
-
 #bordeimagen{
     text-align:center;
     width: 400px;
@@ -42,7 +35,4 @@ h2{
 #imagenprueba{
     height: 400px;
     width: 400px;
-}
-#imagenlogo{
-    width: 200px;
 }
