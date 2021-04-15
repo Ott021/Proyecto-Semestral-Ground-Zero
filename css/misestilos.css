@@ -21,4 +21,21 @@
     color: #FFFFFF;
     text-decoration: none;
 }
+#icono-logeado{
+    font-size: 32px;
+    color: rgb(255, 255, 255);
+}
+.carousel-inner {
+    width: 1325px;
+    height: 100vh;
+}
 
+#imagenlogo{
+    width: 200px;
+}
+
+#cologo{
+    margin-left: 25px;
+    width: 200px;
+    height: 100px;
+}
