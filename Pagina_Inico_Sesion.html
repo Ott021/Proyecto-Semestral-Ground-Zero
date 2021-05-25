@@ -8,6 +8,8 @@
   <title>Inicio de Sesion</title>
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/Pagina_inicio_sesion.css">
+  <script src="js/jquery-3.6.0.js"></script>
+  <script src="js/validaciones_inicio_registro.js"></script>
 </head>
 
 <body class="text-center">
@@ -22,9 +24,11 @@
           width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Inicie Sesion</h1>
         <label for="inputEmail" class="sr-only">Correo Electronico</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+        <input type="email" id="correo" class="form-control" placeholder="Email" required autofocus>
+        <div class="invalid-feedback col-2" id="errorCorreo"></div>
         <label for="inputPassword" class="sr-only">Contraseña</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="password" id="contraseña" class="form-control" placeholder="Password" required>
+        <div class="invalid-feedback col-2" id="errorContraseña"></div>
         <div class="checkbox mb-3">
           <div class="row"></div>
           <label>

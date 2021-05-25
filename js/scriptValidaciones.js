@@ -95,27 +95,18 @@ $(document).ready(function () {
         exito = validarRut()
     });
 
-    //Validar Nombre
     $("#nombre").blur(function () {
         exito = validarNombre()
     });
 
-    //Validar Email
     $("#correo").blur(function () {
         exito = validarEmail()
     });
 
-    //Validar Telefono
     $("#telefono").blur(function () {
         exito = validarCelular()
     });
 
-    //Validar Ciudad
-    $("#cboCiudad").change(function () {
-        exito = validaCiudad()
-    });
-
-    //Validar Comentarios
     $("#texto").blur(function () {
         exito = validarComentarios(50)
     });
@@ -126,18 +117,15 @@ $(document).ready(function () {
     });
 
 
-    //Envío del formulario
-    $("#form1").submit(function () {
+    $("#form").submit(function () {
         exito = false
 
 
-        //valida antes de enviar el formulario
-
-        if (!validaNombre() ||
-            !validaEmail() ||
-            !validaTelefono() ||
-            !validaCiudad() ||
-            !validaComentarios(50)
+        if (!validarRut() ||
+            !validarNombre() ||
+            !validarEmail() ||
+            !validarCelular() ||
+            !validarComentarios(50)
         ) {
             event.preventDefault()
         }
