@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="css/estiloFooter.css">
   <link rel="stylesheet" href="css/pagina_pulsa_imagen.css">
   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+  <script src="js/jquery-3.6.0.js"></script>
+  <script src="js/script.js"></script>
 </head>
 
 <body>
@@ -58,8 +60,22 @@
                 <a class="dropdown-item" href="#">Otros</a>
               </div>
             </li>
+
           </ul>
+
+          <select  class="nav-link dropdown-toggle mr-sm-2" id="monedas">
+            <option value="clp">Peso Chileno</option>
+            <option value="usd">Dolar</option>
+            <option value="eur">Euro</option>
+            <option value="cad">Dolar canadiense</option>
+            <option value="ars">Peso Argentino</option>
+          </select>
+
+          <button class="btn btn-outline-success my-2 my-sm-0 border-light text-light dar"
+              type="submit" id="cambiarMoneda">Cambiar moneda</button>
+
           <ul class="nav navbar-nav float-right nav-top">
+
             <li>
               <a id="cart-link" href="../Proyecto-Semestral-Ground-Zero/Vista_Canasta.html" class="trsn nav-link"
                 title="View/Edit Cart">
@@ -95,7 +111,7 @@
           <div class="form-group price_elem row">
             <label class="col-sm-3 col-md-3 form-control-label nopaddingtop">Precio:</label>
             <div class="col-sm-8 col-md-9">
-              <span class="product-form-price" id="product-form-price">$20.000</span>
+              <span class="product-form-price" id="precioProducto">20000 Pesos Chileno(s)</span>
 
             </div>
           </div>
