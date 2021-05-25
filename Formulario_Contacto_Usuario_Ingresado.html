@@ -31,9 +31,15 @@
             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link"
-                                href="../Proyecto-Semestral-Ground-Zero/Pagina_Inico_Sesion.html">Iniciar Sesión</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="icon ion-md-person" id="icono-logeado"></i>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="../Proyecto-Semestral-Ground-Zero/index.html">Cerrar
+                                    Sesión</a>
+                            </div>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -63,11 +69,19 @@
                                 <a class="dropdown-item" href="#">Otros</a>
                             </div>
                         </li>
-                        <a class="nav-link btn btn-outline-success my-2 my-sm-0 border-light text-light dar" href="../Proyecto-Semestral-Ground-Zero/Formulario_Contacto.html">Contacto</a>
+                        <li>
+                            <a class="nav-link btn btn-outline-success my-2 my-sm-0 border-light text-light dar"
+                                href="../Proyecto-Semestral-Ground-Zero/Formulario_Contacto_Usuario_Ingresado.html">Contacto</a>
+                        </li>
+                        <li>
+                            <a class="nav-link btn btn-outline-success my-2 my-sm-0 border-light text-light dar"
+                                href="../Proyecto-Semestral-Ground-Zero/Formulario_Publicacion.html">Generar
+                                Publicación</a>
+                        </li>
                     </ul>
                     <ul class="nav navbar-nav float-right nav-top">
                         <li>
-                            <a id="cart-link" href="../Proyecto-Semestral-Ground-Zero/Vista_Canasta.html"
+                            <a id="cart-link" href="../Proyecto-Semestral-Ground-Zero/Vista_Canasta_Usuario_Ingresado.html"
                                 class="trsn nav-link" title="View/Edit Cart">
                                 <i class="icon ion-md-cart"></i>
                                 <span id="nav-bar-cart"><span class="cart-size">0</span> Producto(s) </span>
