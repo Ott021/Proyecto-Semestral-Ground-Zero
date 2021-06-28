@@ -1,3 +1,5 @@
+{% load static%}
+{% load bootstrap4%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,8 +8,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inicio de Sesion</title>
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/Pagina_inicio_sesion.css">
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'core/css/bootstrap.css'%}">
+  <link rel="stylesheet" href="{% static 'core/css/diseño_pag_recupera_cuenta.css'%}">
   <script src="js/jquery-3.6.0.js"></script>
   <script src="js/validaciones_inicio_registro.js"></script>
 </head>
@@ -15,7 +18,7 @@
 <body class="text-center">
 
   <div class="container-fluid">
-    <div class="row" id="coliniciosesion"></div>
+    <div class="row" id="bloque1"></div>
     <div class="col-4"></div>
     <div class="col-6" id="coliniciosesion">
       <form class="form-signin">
@@ -35,23 +38,17 @@
             <input type="checkbox" value="remember-me"> Recuerdame
           </label>
         </div>
-        <a href="../Proyecto-Semestral-Ground-Zero/Usuario_Ingresado.html"> <button
+        <a href="{% url 'index_user' %}"> <button
             class="btn btn-lg btn-primary btn-block" type="button">Iniciar Sesion</button></a>
-        <a href="Recupera_cuenta.html">Recuperar Contraseña</a>
+        <a href="{% url 'Recuperar_Cuenta' %}">Recuperar Contraseña</a>
         <div class="row"></div>
-        <a href="Pagina_Registro.html">Registrate</a>
+        <a href="{% url 'Pagina_Registro' %}">Registrate</a>
       </form>
     </div>
     <div class="col-2"></div>
 
   </div>
-
-
-
-
-
-
-
+  {% bootstrap_javascript jquery='full' %}
 </body>
 
 </html>

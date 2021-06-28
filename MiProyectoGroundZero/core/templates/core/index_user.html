@@ -1,3 +1,5 @@
+{% load static%}
+{% load bootstrap4%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,11 +7,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ground Zero</title>
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/misestilos.css">
-  <link rel="stylesheet" href="css/estiloFooter.css">
-  <link rel="stylesheet" href="css/pagina_pulsa_imagen.css">
+  <title>Inicio Usuario</title>
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'core/css/bootstrap.css'%}">
+  <link rel="stylesheet" href="{% static 'core/css/misestilos.css'%}">
+  <link rel="stylesheet" href="{% static 'core/css/estiloFooter.css'%}">
+  <link rel="stylesheet" href="{% static 'core/css/pagina_pulsa_imagen.css'%}">
   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 
 </head>
@@ -35,7 +38,7 @@
                 <i class="icon ion-md-person" id="icono-logeado"></i>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="../Proyecto-Semestral-Ground-Zero/index.html">Cerrar Sesión</a>
+                <a class="dropdown-item" href="{% url 'index' %}">Cerrar Sesión</a>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -68,18 +71,17 @@
             </li>
             <li>
               <a class="nav-link btn btn-outline-success my-2 my-sm-0 border-light text-light dar"
-                href="../Proyecto-Semestral-Ground-Zero/Formulario_Contacto_Usuario_Ingresado.html">Contacto</a>
+                href="{% url 'Formulario_Contacto_User' %}">Contacto</a>
             </li>
             <li>
               <a class="nav-link btn btn-outline-success my-2 my-sm-0 border-light text-light dar"
-                href="../Proyecto-Semestral-Ground-Zero/Formulario_Publicacion.html">Generar Publicación</a>
+                href="{% url 'Formulario_Publicacion' %}">Generar Publicación</a>
             </li>
           </ul>
 
           <ul class="nav navbar-nav float-right nav-top">
             <li>
-              <a id="cart-link" href="../Proyecto-Semestral-Ground-Zero/Vista_Producto_Usuario_Ingresado.html"
-                class="trsn nav-link" title="View/Edit Cart">
+              <a id="cart-link" href="{% url 'Vista_Canasta_User' %}" class="trsn nav-link" title="View/Edit Cart">
                 <i class="icon ion-md-cart"></i>
                 <span id="nav-bar-cart"><span class="cart-size">0</span> Producto(s) </span>
               </a>
@@ -145,13 +147,13 @@
   <div class="row">
     <div class="col d-flex justify-content-center mb-4">
       <div class="card" style="width: 17rem;">
-        <img src="https://cdn.shopify.com/s/files/1/0508/6570/1020/products/OB008-1_1024x1024@2x.jpg?v=1610682470"
-          class="card-img-top" alt="...">
+        <a href="{% url 'Vista_Producto_User' %}"><img
+            src="https://http2.mlstatic.com/D_NQ_NP_931748-MLC43452146957_092020-O.jpg" class="card-img-top"
+            alt="..."></a>
         <div class="card-body">
           <h5 class="card-title">Nombre obra</h5>
           <p class="card-text">Descripcion breve</p>
-          <a href="../Proyecto-Semestral-Ground-Zero/Vista_Producto_Usuario_Ingresado.html"
-            class="btn btn-primary">Ver</a>
+          <a href="{% url 'Vista_Producto_User' %}" class="btn btn-primary">Ver</a>
         </div>
       </div>
     </div>
@@ -271,7 +273,7 @@
     </div>
   </footer>
   </div>
-
+  {% bootstrap_javascript jquery='full' %}
   <script src="js/jquery-3.6.0.js"></script>
   <script src="js/popper.js"></script>
   <script src="js/bootstrap.js"></script>
