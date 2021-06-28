@@ -1,3 +1,5 @@
+{% load static%}
+{% load bootstrap4%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,8 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recuperacion de cuenta</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/diseño_pag_recupera_cuenta.css">
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'core/css/diseño_pag_recupera_cuenta.css'%}">
 </head>
 
 <body class="text-center">
@@ -26,14 +29,14 @@
                 <div class="checkbox mb-3">
                 </div>
                 <div class="row"></div>
-                <a href="../Proyecto-Semestral-Ground-Zero/Pagina_Inico_Sesion.html"><button
+                <a href="{% url 'Pagina_Inicio_Sesion' %}"><button
                         class="btn btn-lg btn-primary btn-block" type="button">Enviar Codigo</button></a>
             </form>
         </div>
         <div class="col-2"></div>
 
     </div>
-
+    {% bootstrap_javascript jquery='full' %}
 </body>
 
 </html>
