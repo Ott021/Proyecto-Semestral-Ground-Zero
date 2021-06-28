@@ -1,3 +1,5 @@
+{% load static%}
+{% load bootstrap4%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,18 +8,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inicio de Sesion</title>
+<<<<<<< HEAD:Pagina_Inico_Sesion.html
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/Pagina_inicio_sesion.css">
 
   <script src="js/jquery-3.6.0.js"></script>
   
 
+=======
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'core/css/bootstrap.css'%}">
+  <link rel="stylesheet" href="{% static 'core/css/diseño_pag_recupera_cuenta.css'%}">
+>>>>>>> f065c114b4f9e53360509b5d3a70e8f5a9a652f2:MiProyectoGroundZero/core/templates/core/Pagina_Inicio_Sesion.html
 </head>
 
 <body class="text-center">
 
   <div class="container-fluid">
-    <div class="row" id="coliniciosesion"></div>
+    <div class="row" id="bloque1"></div>
     <div class="col-4"></div>
     <div class="col-6" id="coliniciosesion">
       <form class="form-signin">
@@ -26,6 +34,7 @@
           width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Inicie Sesion</h1>
         <label for="inputEmail" class="sr-only">Correo Electronico</label>
+<<<<<<< HEAD:Pagina_Inico_Sesion.html
 
         <div class="row pb-4">
         <input type="email" id="inputEmail" class="form-control" placeholder="Email" >
@@ -40,29 +49,30 @@
         <div class="invalid-feedback" id="epassowrd"></div>
       </div>
 
+=======
+        <input type="email" id="correo" class="form-control" placeholder="Email" required autofocus>
+        <div class="invalid-feedback col-2" id="errorCorreo"></div>
+        <label for="inputPassword" class="sr-only">Contraseña</label>
+        <input type="password" id="contraseña" class="form-control" placeholder="Password" required>
+        <div class="invalid-feedback col-2" id="errorContraseña"></div>
+>>>>>>> f065c114b4f9e53360509b5d3a70e8f5a9a652f2:MiProyectoGroundZero/core/templates/core/Pagina_Inicio_Sesion.html
         <div class="checkbox mb-3">
           <div class="row"></div>
           <label>
             <input type="checkbox" value="remember-me"> Recuerdame
           </label>
         </div>
-        <a href="../Proyecto-Semestral-Ground-Zero/Usuario_Ingresado.html"> <button
+        <a href="{% url 'index_user' %}"> <button
             class="btn btn-lg btn-primary btn-block" type="button">Iniciar Sesion</button></a>
-        <a href="Recupera_cuenta.html">Recuperar Contraseña</a>
+        <a href="{% url 'Recuperar_Cuenta' %}">Recuperar Contraseña</a>
         <div class="row"></div>
-        <a href="Pagina_Registro.html">Registrate</a>
+        <a href="{% url 'Pagina_Registro' %}">Registrate</a>
       </form>
     </div>
     <div class="col-2"></div>
 
   </div>
-
-
-
-
-
-
-
+  {% bootstrap_javascript jquery='full' %}
 </body>
 
 </html>

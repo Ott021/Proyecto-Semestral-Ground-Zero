@@ -1,0 +1,249 @@
+{% load static%}
+{% load bootstrap4%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'core/css/misestilos.css'%}">
+    <link rel="stylesheet" href="{% static 'core/css/estiloFooter.css'%}">
+    <link rel="stylesheet" href="{% static 'core/css/pagina_pulsa_imagen.css'%}">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+
+    <script src="js/jquery-3.6.0.js"></script>
+    <script src="js/scriptValidaciones.js"></script>
+
+</head>
+
+<body>
+    <div class="row" id="iniciopagina"></div>
+    <div class="row">
+        <div class="col" id="cologo">
+            <img id="imagenlogo"
+                src="https://www.logaster.com.es/blog/wp-content/uploads/sites/4/2019/03/0036_t_art-logo_12.png"
+                alt="gato"> <a href="logo.html"></a>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'Pagina_Inicio_Sesion' %}">Iniciar Sesión</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Categorias
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Pinturas</a>
+                                <a class="dropdown-item" href="#">Esculturas</a>
+                                <a class="dropdown-item" href="#">Decoración</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Otros</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Artistas
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Antonia Boza</a>
+                                <a class="dropdown-item" href="#">Alfredo Echazarreta</a>
+                                <a class="dropdown-item" href="#">Claudia Larenas</a>
+                                <a class="dropdown-item" href="#">Edwin Rojas</a>
+                                <a class="dropdown-item" href="#">Fernando Cifuentes Soro</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Otros</a>
+                            </div>
+                        </li>
+                        <a class="nav-link btn btn-outline-success my-2 my-sm-0 border-light text-light dar"
+                            href="{% url 'Formulario_Contacto' %}">Contacto</a>
+                    </ul>
+                    <ul class="nav navbar-nav float-right nav-top">
+                        <li>
+                            <a id="cart-link" href="{% url 'Vista_Canasta' %}" class="trsn nav-link"
+                                title="View/Edit Cart">
+                                <i class="icon ion-md-cart"></i>
+                                <span id="nav-bar-cart"><span class="cart-size">0</span> Producto(s) </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <form class="form-inline mt-2 mt-md-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Buscar">
+                        <button class="btn btn-outline-success my-2 my-sm-0 border-light text-light dar"
+                            type="submit">Buscar</button>
+                    </form>
+                </div>
+            </nav>
+        </header>
+
+        <section class="row pt-3 pb-3">
+            <div class="container-fluid">
+                <form>
+
+                    <div class="row pb-4">
+                        <div class="col"></div>
+                        <div class="col-4">
+                            <h1>¡Contáctanos!</h1>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-2"></div>
+                        <label class="col-sm-2 col-form-label">RUT (*)</label>
+                        <div class="col-4">
+                            <input type="text" class="form-control" id="rut" placeholder="11.111.111-k">
+                        </div>
+                        <div class="invalid-feedback col-2" id="errorRut"></div>
+                        <div class="col-2"></div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-2"></div>
+                        <label for="input" class="col-sm-2 col-form-label">Nombre Completo (*)</label>
+                        <div class="col-4">
+                            <input type="text" class="form-control" id="nombre"
+                                placeholder="1er Nombre 1er Apellido 2do apellido">
+                        </div>
+                        <div class="invalid-feedback col-2" id="errorNombre"></div>
+                        <div class="col-2"></div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-2"></div>
+                        <label for="input" class="col-sm-2 col-form-label">Correo Electrónico (*)</label>
+                        <div class="col-4">
+                            <input type="email" class="form-control" placeholder="example@ejemplo.com" id="correo">
+
+                        </div>
+                        <div class="invalid-feedback col-2" id="errorCorreo"></div>
+                        <div class="col-2"></div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-2"></div>
+                        <label for="input" class="col-sm-2 col-form-label">Teléfono de Contacto (*)</label>
+                        <div class="col-4">
+                            <input type="text" class="form-control" id="telefono" placeholder="823 157 82">
+                        </div>
+                        <div class="invalid-feedback col-2" id="errorCelu"></div>
+                        <div class="col-2"></div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <div class="col-4"></div>
+                        <div class="col">
+                            <select name="combo1" id="combo1">
+                                <option selected>Región</option>
+                                <option value="1">Arica y Parinacota</option>
+                                <option value="2">Tarapacá</option>
+                                <option value="3">Antofagasta</option>
+                                <option value="4">Atacama</option>
+                                <option value="5">Coquimbo</option>
+                                <option value="6">Valparaíso</option>
+                                <option value="7">Metropolitana de Santiago</option>
+                                <option value="8">O’Higgins</option>
+                                <option value="9">Maule</option>
+                                <option value="10">Ñuble</option>
+                                <option value="11">Biobío</option>
+                                <option value="12">La Araucanía</option>
+                                <option value="13">Los Ríos</option>
+                                <option value="14">Los Lagos</option>
+                                <option value="15">Aysén</option>
+                                <option value="16">Magallanes</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <select name="combo1" id="combo1">
+                                <option selected>Ciudad de Residencia</option>
+                                <option value="1">Valparaíso</option>
+                                <option value="2">Viña del Mar</option>
+                                <option value="3">Concón</option>
+                                <option value="4">Quilpué</option>
+                                <option value="5">Villa Alemana</option>
+                                <option value="6">Casablanca</option>
+                            </select>
+                        </div>
+                        <div class="col-4"></div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-2"></div>
+                        <label for="input" class="col-sm-2 col-form-label">Cuentanos Más</label>
+                        <div class="col-4">
+                            <textarea class="form-control" id="texto" rows="4" placeholder="Escribe aqui..."></textarea>
+                            <small class="form-text text-muted text-right" id="contChar">0</small>
+                        </div>
+                        <div class="invalid-feedback col-2" id="errorTexto"></div>
+                        <div class="col-2">
+
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-4"></div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-success border-light text-light dar">Enviar</button>
+                            <button type="reset" class="btn btn-secondary">Restablecer</button>
+                        </div>
+                        <div class="col-4"></div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6 text-left">
+                        <h6 class="text-muted lead">CONTACTO:</h6>
+                        <h6 class="text-muted">
+                            Álvarez 2336<br>
+                            Viña del Mar, Valparaíso<br>
+                            Teléfonos: +569 746704750 – +569 90381752.<br>
+                        </h6>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6 text-right">
+                        <h6 class="text-muted lead">ENCUENTRANOS EN LAS REDES</h6>
+                        <div class="redes-footer">
+                            <a href="https://www.facebook.com/"><i class="icon ion-logo-facebook"></i></a>
+                            <a href="https://twitter.com/"><i class="icon ion-logo-twitter"></i></a>
+                            <a href="https://www.instagram.com/"><i class="icon ion-logo-instagram"></i></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-12 text-right">
+                        <p class="text-muted small">José Escalona y Otto Pacheco @2021.<br> Todos los derechos
+                            reservados.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+    </div>
+    </div>
+    </footer>
+    </div>
+    {% bootstrap_javascript jquery='full' %}
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+{% load static%}
+{% load bootstrap4%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina_Registro</title>
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'core/css/bootstrap.css'%}">
+  <link rel="stylesheet" href="{% static 'core/css/misestilos.css'%}">
+  <link rel="stylesheet" href="{% static 'core/css/diseño_pag_recupera_cuenta.css'%}">
+</head>
+
+<body class="text-center">
+
+  <div class="container-fluid">
+    <div class="row" id="bloque1"></div>
+    <div class="col-4"></div>
+    <div class="col-6" id="coliniciosesion">
+      <form class="form-signin">
+        <img class="mb-4"
+          src="https://www.logaster.com.es/blog/wp-content/uploads/sites/4/2019/03/0036_t_art-logo_12.png" alt=""
+          width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Registrate</h1>
+
+        <label for="inputEmail" class="sr-only">Nombre</label>
+        <input type="" id="nombre" class="form-control" placeholder="Nombre" required autofocus>
+        <div class="invalid-feedback col-2" id="errorNombre"></div>
+
+        <label for="inputEmail" class="sr-only">Correo Electronico</label>
+        <input type="email" id="correo" class="form-control" placeholder="Email" required autofocus>
+        <div class="invalid-feedback col-2" id="errorCorreo"></div>
+
+        <label for="inputPassword" class="sr-only">Contraseña</label>
+        <input type="password" id="contraseña" class="form-control" placeholder="Password" required>
+        <div class="invalid-feedback col-2" id="errorContraseña"></div>
+
+        <a href="{% url 'Pagina_Inicio_Sesion' %}"> <button class="btn btn-lg btn-primary btn-block"
+            type="button">Registrarse</button></a>
+      </form>
+    </div>
+    <div class="col-2"></div>
+
+  </div>
+  {% bootstrap_javascript jquery='full' %}
+</body>
+
+</html>
