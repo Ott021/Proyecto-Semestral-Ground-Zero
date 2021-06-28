@@ -2,18 +2,12 @@ from django.db import models
 
 # Create your models here.
 
-class Categoria(models.Model):
-    idCategoria = models.IntegerField(primary_key=True, verbose_name='Id Categoria')
-    nombreCategoria = models.CharField(max_length=50,verbose_name='Categoria')
+class Usuario(models.Model):
+    rut = models.CharField(primary_key=True, max_length=9, verbose_name='Rut')
+    nombre = models.CharField(max_length=50,verbose_name='Nombre')
+    email = models.CharField(max_length=50,verbose_name='Email')
+    password = models.CharField(max_length=50,verbose_name='Password')
 
     def __str__(self):
-        return self.nombreCategoria
+        return self.rut
 
-class Vehiculo(models.Model):
-    patente = models.CharField(primary_key=True, max_length=6, verbose_name='Patente')
-    marca = models.CharField(max_length=20, verbose_name='Marca')
-    modelo = models.CharField(max_length=20, null=True, blank=True, verbose_name='Modelo')
-    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.patente
