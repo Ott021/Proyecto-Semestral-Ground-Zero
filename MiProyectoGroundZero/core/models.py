@@ -13,8 +13,8 @@ class Usuario(models.Model):
 
 class Contacto(models.Model):
     rut = models.CharField(primary_key=True, max_length=9, verbose_name='Rut')
-    nombreCompleto = models.CharField(max_length=100,verbose_name='NombreCompleto')
-    correoElectronico = models.CharField(max_length=50,verbose_name='CorreoElectronico')
+    nombreCompleto = models.CharField(max_length=100,verbose_name='Nombre Completo')
+    correoElectronico = models.CharField(max_length=50,verbose_name='Correo Electronico')
     region = models.CharField(max_length=30,verbose_name='Region')
     ciudad = models.CharField(max_length=30,verbose_name='Ciudad')
     texto = models.TextField(max_length=200,verbose_name='Texto')

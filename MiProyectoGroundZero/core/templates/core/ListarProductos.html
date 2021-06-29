@@ -101,10 +101,30 @@
         <hr>
         <hr>
 
-        
+        <h2>Obras</h2>
+        <table class= "table table-dark">
+            <tr>
+                <td>Nombre Obra</td>
+                <td>Autor</td>
+                <td>Precio</td>
+                <td>Foto</td>
+            </tr>
+            {% for v in productos %}
+            <tr>
+                <td>{{ v.nombreObra}}</td>
+                <td>{{ v.nombreAutor}}</td>
+                <td>{{ v.precio}}</td>
+                <td>{{ v.imagen}}</td>
+            </tr>
+            {% endfor %}
+        </table>
 
     </div>
 
+    <hr>
+    <hr>
+    <hr>
+        <hr>
     <footer>
         <div class="container">
             <div class="row">

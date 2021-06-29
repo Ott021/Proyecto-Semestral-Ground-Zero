@@ -13,22 +13,24 @@
   <link rel="stylesheet" href="{% static 'core/css/bootstrap.css'%}">
   <link rel="stylesheet" href="{% static 'core/css/misestilos.css'%}">
   <link rel="stylesheet" href="{% static 'core/css/diseño_pag_recupera_cuenta.css'%}">
+  <link rel="icon" href="{% static 'core/img/favicon.ico'%}" type="ico" >
 </head>
 
 <body>
 
-  <div class="container text-center">
+  <div class="container">
     <div class="row">
       <hr>
+    </div>
+    <div class="container text-center">
+      <img class="mb-4 text-right"
+          src="https://www.logaster.com.es/blog/wp-content/uploads/sites/4/2019/03/0036_t_art-logo_12.png" alt=""
+          width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Registro</h1>
     </div>
     <div class="row">
       <div class="col-2"></div>
       <div class="col">
-        <img class="mb-4"
-          src="https://www.logaster.com.es/blog/wp-content/uploads/sites/4/2019/03/0036_t_art-logo_12.png" alt=""
-          width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal">Registrate</h1>
-
         <form class="form-signin" action="" method="POST" id="formularioRegistro">
           {% csrf_token %}
           {{ form|crispy }}

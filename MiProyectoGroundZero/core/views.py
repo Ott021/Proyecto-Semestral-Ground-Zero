@@ -1,5 +1,5 @@
 from core.forms import ContactoForm, RegistroForm, ProductoForm
-from core.models import Usuario
+from core.models import Producto, Usuario
 from django.shortcuts import render
 
 # Create your views here.
@@ -20,7 +20,7 @@ def Formulario_Publicacion(request):
         if formulario.is_valid():
             formulario.save()
             data["mensaje"] = "Publicación realizada"
-            
+
     return render(request,'core/Formulario_Publicacion.html',data)
 
 def Formulario_Contacto(request):
@@ -97,4 +97,9 @@ def ListarUsuarios(request):
     return render(request,'core/ListarUsuarios.html',datos)
 
 def ListarProductos(request):
-    return render(request,'core/ListarProductos.html')
+    productos = Producto.objects.all()
+
+    datos = {
+        'productos' : productos
+    }
+    return render(request,'core/ListarProductos.html',datos)
