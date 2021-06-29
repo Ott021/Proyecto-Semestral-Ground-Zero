@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{% static 'core/css/estiloFooter.css'%}">
     <link rel="stylesheet" href="{% static 'core/css/pagina_pulsa_imagen.css'%}">
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-    <link rel="icon" href="{% static 'core/img/favicon.ico'%}" type="ico" >
+    <link rel="icon" href="{% static 'core/img/favicon.ico'%}" type="ico">
 
 </head>
 
@@ -119,13 +119,14 @@
                             </div>
                             {% csrf_token %}
                             {{ form|crispy }}
-                            
-                                <div class="d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-success border-light text-light dar">Publicar</button>
-                                    &nbsp;
-                                    <button type="reset" class="btn btn-secondary">Limpiar</button>
-                                </div>
-                             
+
+                            <div class="d-flex justify-content-end">
+                                <button type="submit"
+                                    class="btn btn-success border-light text-light dar">Publicar</button>
+                                &nbsp;
+                                <button type="reset" class="btn btn-secondary">Limpiar</button>
+                            </div>
+
                         </form>
                         <span>{{ mensaje }}</span>
                     </div>
