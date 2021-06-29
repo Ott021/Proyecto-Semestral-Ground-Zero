@@ -7,13 +7,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio Usuario</title>
+    <title>Lista Usuarios </title>
     {% bootstrap_css %}
     <link rel="stylesheet" href="{% static 'core/css/bootstrap.css'%}">
     <link rel="stylesheet" href="{% static 'core/css/misestilos.css'%}">
     <link rel="stylesheet" href="{% static 'core/css/estiloFooter.css'%}">
     <link rel="stylesheet" href="{% static 'core/css/pagina_pulsa_imagen.css'%}">
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link rel="icon" href="{% static 'core/img/favicon.ico'%}" type="ico" >
 
 </head>
 
@@ -75,6 +76,7 @@
                             <a class="nav-link btn btn-outline-success my-2 my-sm-0 border-light text-light dar"
                                 href="{% url 'Formulario_Contacto_User' %}">Contacto</a>
                         </li>
+                        &nbsp;
                         <li>
                             <a class="nav-link btn btn-outline-success my-2 my-sm-0 border-light text-light dar"
                                 href="{% url 'Formulario_Publicacion' %}">Generar Publicación</a>
