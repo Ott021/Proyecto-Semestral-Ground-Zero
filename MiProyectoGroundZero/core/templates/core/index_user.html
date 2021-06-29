@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="{% static 'core/css/estiloFooter.css'%}">
   <link rel="stylesheet" href="{% static 'core/css/pagina_pulsa_imagen.css'%}">
   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+  <link rel="icon" href="{% static 'core/img/favicon.ico'%}" type="ico">
 
 </head>
 
@@ -38,6 +39,8 @@
                 <i class="icon ion-md-person" id="icono-logeado"></i>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{% url 'ListarUsuarios' %}">Lista de Usuarios</a>
+                <a class="dropdown-item" href="{% url 'ListarProductos' %}">Lista de Productos</a>
                 <a class="dropdown-item" href="{% url 'index' %}">Cerrar Sesión</a>
               </div>
             </li>
@@ -73,6 +76,7 @@
               <a class="nav-link btn btn-outline-success my-2 my-sm-0 border-light text-light dar"
                 href="{% url 'Formulario_Contacto_User' %}">Contacto</a>
             </li>
+            &nbsp;
             <li>
               <a class="nav-link btn btn-outline-success my-2 my-sm-0 border-light text-light dar"
                 href="{% url 'Formulario_Publicacion' %}">Generar Publicación</a>

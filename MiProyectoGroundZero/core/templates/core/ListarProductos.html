@@ -1,6 +1,5 @@
 {% load static%}
 {% load bootstrap4%}
-{% load crispy_forms_tags%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publicar</title>
+    <title>Lista Obras</title>
     {% bootstrap_css %}
     <link rel="stylesheet" href="{% static 'core/css/bootstrap.css'%}">
     <link rel="stylesheet" href="{% static 'core/css/misestilos.css'%}">
@@ -29,6 +28,7 @@
         </div>
     </div>
     <div class="container-fluid">
+
         <header>
             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
                 <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -79,10 +79,10 @@
                         &nbsp;
                         <li>
                             <a class="nav-link btn btn-outline-success my-2 my-sm-0 border-light text-light dar"
-                                href="{% url 'Formulario_Publicacion' %}">Generar
-                                Publicación</a>
+                                href="{% url 'Formulario_Publicacion' %}">Generar Publicación</a>
                         </li>
                     </ul>
+
                     <ul class="nav navbar-nav float-right nav-top">
                         <li>
                             <a id="cart-link" href="{% url 'Vista_Canasta_User' %}" class="trsn nav-link"
@@ -100,76 +100,71 @@
                 </div>
             </nav>
         </header>
+        <hr>
+        <hr>
 
-        <section class="row pt-3 pb-3">
-            <div class="container-fluid">
-                <div class="row">
-                    <hr>
+        <h2>Obras</h2>
+        <table class="table table-dark">
+            <tr>
+                <td>Nombre Obra</td>
+                <td>Autor</td>
+                <td>Precio</td>
+                <td>Foto</td>
+                <td>Administrar</td>
+            </tr>
+            {% for v in productos %}
+            <tr>
+                <td>{{ v.nombreObra}}</td>
+                <td>{{ v.nombreAutor}}</td>
+                <td>{{ v.precio}}</td>
+                <td>{{ v.imagen}}</td>
+                <td>
+                    <a href="{% url 'EditarProducto' v.rut %}">Editar</a>
+                    <a href="{% url 'EliminarProducto' v.rut %}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6 text-left">
+                    <h6 class="text-muted lead">CONTACTO:</h6>
+                    <h6 class="text-muted">
+                        Álvarez 2336<br>
+                        Viña del Mar, Valparaíso<br>
+                        Teléfonos: +569 746704750 – +569 90381752.<br>
+                    </h6>
                 </div>
-                <div class="row">
-                    <div class="col-2"></div>
-                    <div class="col">
-                        <form class="form-signin" method="POST" enctype="multipart/form-data">
-                            <div class="row pb-4">
-                                <div class="col"></div>
-                                <div class="col-6">
-                                    <h1>Publicación de Obra</h1>
-                                </div>
-                                <div class="col"></div>
-                            </div>
-                            {% csrf_token %}
-                            {{ form|crispy }}
 
-                            <div class="d-flex justify-content-end">
-                                <button type="submit"
-                                    class="btn btn-success border-light text-light dar">Publicar</button>
-                                &nbsp;
-                                <button type="reset" class="btn btn-secondary">Limpiar</button>
-                            </div>
-
-                        </form>
-                        <span>{{ mensaje }}</span>
+                <div class="col-xs-12 col-md-6 text-right">
+                    <h6 class="text-muted lead">ENCUENTRANOS EN LAS REDES</h6>
+                    <div class="redes-footer">
+                        <a href="https://www.facebook.com/"><i class="icon ion-logo-facebook"></i></a>
+                        <a href="https://twitter.com/"><i class="icon ion-logo-twitter"></i></a>
+                        <a href="https://www.instagram.com/"><i class="icon ion-logo-instagram"></i></i></a>
                     </div>
-                    <div class="col-2"></div>
                 </div>
             </div>
-        </section>
+            <div class="row">
 
-
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 col-md-6 text-left">
-                        <h6 class="text-muted lead">CONTACTO:</h6>
-                        <h6 class="text-muted">
-                            Álvarez 2336<br>
-                            Viña del Mar, Valparaíso<br>
-                            Teléfonos: +569 746704750 – +569 90381752.<br>
-                        </h6>
-                    </div>
-
-                    <div class="col-xs-12 col-md-6 text-right">
-                        <h6 class="text-muted lead">ENCUENTRANOS EN LAS REDES</h6>
-                        <div class="redes-footer">
-                            <a href="https://www.facebook.com/"><i class="icon ion-logo-facebook"></i></a>
-                            <a href="https://twitter.com/"><i class="icon ion-logo-twitter"></i></a>
-                            <a href="https://www.instagram.com/"><i class="icon ion-logo-instagram"></i></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-
-                    <div class="col-md-12 text-right">
-                        <p class="text-muted small">José Escalona y Otto Pacheco @2021.<br> Todos los derechos
-                            reservados.
-                        </p>
-                    </div>
-
+                <div class="col-md-12 text-right">
+                    <p class="text-muted small">José Escalona y Otto Pacheco @2021.<br> Todos los derechos reservados.
+                    </p>
                 </div>
 
             </div>
-    </div>
-    </div>
+
+        </div>
+        </div>
+        </div>
     </footer>
     </div>
     {% bootstrap_javascript jquery='full' %}
