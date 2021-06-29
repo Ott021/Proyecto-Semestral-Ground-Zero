@@ -38,6 +38,8 @@
                 <i class="icon ion-md-person" id="icono-logeado"></i>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{% url 'ListarUsuarios' %}">Lista de Usuarios</a>
+                <a class="dropdown-item" href="{% url 'ListarProductos' %}">Lista de Productos</a>
                 <a class="dropdown-item" href="{% url 'Vista_Producto' %}">Cerrar Sesión</a>
               </div>
             </li>
