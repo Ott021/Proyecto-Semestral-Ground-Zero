@@ -3,7 +3,7 @@ from django.urls import URLPattern
 from .views import index, Formulario_Contacto, Vista_Producto, Vista_Canasta
 from .views import index_user, Formulario_Publicacion,Formulario_Contacto_User, Vista_Producto_User, Vista_Canasta_User
 from .views import Pagina_Inicio_Sesion, Pagina_Registro, Recuperar_Cuenta
-from .views import ListarUsuarios,ListarProductos
+from .views import ListarUsuarios,ListarProductos,EditarProducto,EliminarProducto,EliminarUsuario
 urlpatterns = [
     path('', index, name="index"),
     path('contacto/', Formulario_Contacto, name="Formulario_Contacto"),
@@ -22,5 +22,8 @@ urlpatterns = [
     #Listar-agregar-eliminar-editar
     path('user/listarUsuarios',ListarUsuarios, name="ListarUsuarios"),
     path('user/listarProductos',ListarProductos, name="ListarProductos"),
+    path('user/editarProducto/<id>', EditarProducto, name="EditarProducto"),
+    path('user/eliminarProducto/<id>', EliminarProducto, name="EliminarProducto"),
+    path('user/eliminarUsuario/<id>', EliminarUsuario, name="EliminarUsuario")
 
 ]

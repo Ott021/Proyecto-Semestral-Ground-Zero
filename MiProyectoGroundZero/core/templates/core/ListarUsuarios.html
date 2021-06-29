@@ -109,12 +109,14 @@
                 <td>Rut</td>
                 <td>Nombre</td>
                 <td>Email</td>
+                <td>Administrar</td>
             </tr>
             {% for v in usuarios %}
             <tr>
                 <td>{{ v.rut}}</td>
                 <td>{{ v.nombre}}</td>
                 <td>{{ v.email}}</td>
+                <td><a href="{% url 'EliminarUsuario' v.rut %}">Eliminar</a></td>
             </tr>
             {% endfor %}
         </table>

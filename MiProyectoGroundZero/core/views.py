@@ -1,6 +1,6 @@
 from core.forms import ContactoForm, RegistroForm, ProductoForm
 from core.models import Producto, Usuario
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 def index(request):
@@ -81,6 +81,7 @@ def Pagina_Registro(request):
         if formulario.is_valid:
             formulario.save()
             datos['mensaje'] = 'Registro Completado'
+            return redirect(to="Pagina_Inicio_Sesion")
 
     return render(request,'core/Pagina_Registro.html',datos)
 
@@ -103,3 +104,29 @@ def ListarProductos(request):
         'productos' : productos
     }
     return render(request,'core/ListarProductos.html',datos)
+
+def EditarProducto(request,id):
+
+    producto = Producto.objects.get(rut= id)
+
+    data = {
+        'form': ProductoForm(instance=producto)
+    }
+
+    if request.method == 'POST':
+        formulario = ProductoForm(data=request.POST, files=request.FILES, instance=producto)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "Edición realizada"
+
+    return render(request, 'core/Editar_Publicacion.html',data)
+
+def EliminarProducto(request,id):
+    producto = Producto.objects.get(rut=id)
+    producto.delete()
+    return redirect(to="ListarProductos")
+
+def EliminarUsuario(request,id):
+    usuario = Usuario.objects.get(rut=id)
+    usuario.delete()
+    return redirect(to="ListarUsuarios")
