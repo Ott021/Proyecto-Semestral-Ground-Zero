@@ -68,4 +68,29 @@ def lista_obras(request):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)          
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)   
+
+
+@api_view(['GET','PUT','DELETE'])
+def detalle_obra(request, id):
+    try:
+        obra = Producto.objects.get(rut=id)              
+    except Producto.DoesNotExist:
+        return Response(status.HTTP_404_NOT_FOUND)    
+
+    if request.method == 'GET':
+        serializer = ObraSerializer(obra)
+        return Response(serializer.data)
+
+    if request.method == 'PUT':
+        data = JSONParser().parse(request)
+        serializer = ObraSerializer(obra,data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+
+    if request.method == 'DELETE':
+        obra.delete()
+        return Response(status.HTTP_204_NO_CONTENT)
